@@ -2,15 +2,28 @@
   <div class='row'>
     <div class='col-md-6'>
 
-    <h2>Secrets Registration Page</h2>
-    <form action="/users" method="post">
-        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <h2>Dojo Secrets Registration</h2>
+    <form action="/register" method="post">
+        <form action="/register" method="post">
+          <input type='hidden' name="authenticity_token" value="<%= form_authenticity_token %>">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" name="user[name]">
+          </div>
+          <div class="form-group">
+            <label for="email">Email address:</label>
+            <input type="email" class="form-control" id="email" name="user[email]">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd" name="user[password]">
+          </div>
+          <div class="form-group">
+            <label for="password_confirmation">Password Confirmation:</label>
+            <input type="password" class="form-control" id="pwd" name="user[password_confirmation]">
+          </div>
 
-    	<h4>Name:</h4><input type="text" class="form-control" id="Name" name = "user[name]"><br>
-    	<h4>Email:</h4> <input type="text" class="form-control" id="Email" name = "user[email]"><br>
-    	<h4>Password:</h4> <input type="text" class="form-control" id="Password" name = "user[password]"><br>
-    	<h4>Password Confirmation:</h4><input type="text" class="form-control" id="Password_Confirmation" name = "user[password_confirmation"><br>
-    	<input type="submit" name="Join" value="Join">
+          <button type="submit" class="btn btn-default">Register</button>
     </form>
 
     </div>
